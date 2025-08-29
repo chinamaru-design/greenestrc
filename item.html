@@ -13,7 +13,71 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL@20..48,200..600,0..1" />
+    <style>
+        input[type="range"] {
+            -webkit-appearance: none;
+            /* デフォルト無効化 */
+            width: 100%;
+            height: 2px;
+            /* バーの太さ */
+            background: #ddd;
+            /* バーの背景色を固定 */
+            border-radius: 3px;
+            outline: none;
 
+            vertical-align: middle;
+        }
+
+        /* Webkit系（Chrome, Safari, Edge） */
+        input[type="range"]::-webkit-slider-runnable-track {
+            height: 2px;
+            /* バーの太さ */
+            background: #ddd;
+            /* 常に同じ色 */
+            border-radius: 3px;
+        }
+
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            width: 16px;
+            height: 16px;
+            background: var(--color-gold);
+            border-radius: 50%;
+            margin-top: -7px;
+            /* -( (つまみの高さ - バーの高さ) / 2 ) */
+            /* 中央揃え */
+            cursor: pointer;
+        }
+
+        /* Firefox */
+        input[type="range"]::-moz-range-track {
+            height: 2px;
+            /* バーの太さ */
+            background: #ddd;
+            border-radius: 3px;
+        }
+
+        input[type="range"]::-moz-range-thumb {
+            width: 16px;
+            height: 16px;
+            background: var(--color-gold);
+            border-radius: 50%;
+            cursor: pointer;
+        }
+
+        .display-box {
+            position: absolute;
+            top: -40px;
+            transform: translateX(-50%);
+            /* ← thumbの半径ぶん補正 */
+            background: var(--color-gold);
+            color: #fff;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 14px;
+            white-space: nowrap;
+        }
+    </style>
 
 
 </head>
@@ -98,7 +162,7 @@
         <!-- Section01【見出し】商品名・価格情報 ------------------------>
         <section class="pItem-product-basic-info">
             <p class="pItem-brandname">AUTHENTIC14</p>
-            <p class="pItem-productname">モンキーポッドダイニングテーブル</p>
+            <h2 class="pItem-productname">モンキーポッドダイニングテーブル</h2>
             <p class="pItem-productid">#RFND-DT120</p>
             <p class="pItem-price">&yen;&nbsp;78,000<span>(税込)</span></p>
             <ul>
@@ -117,17 +181,17 @@
                     </p>
                 </div>
             </div>
-<div class="wrap03">
-    
-            <h2>使用素材<span class="material-symbols-outlined">Horizontal_Rule</span>モンキーポッド</h2>
-    
-            <figure><img src="images/monkeypod.jpeg" alt="">
-                <figcaption>
-                    モンキーポッドは美しい木目と力強いコントラストが魅力の広葉樹。豊かな色合いと美しい木目が特長で、耐水性が高く、建築素材や様々な家具に幅広く活用されています。時間が経つにつれて深みのある味わいが出てくる素材です。
-                </figcaption>
-            </figure>
-            <p class="learnmore"><a class="materialsymbols-before" href="">LEARN MORE</a></p>
-</div>
+            <div class="wrap03">
+
+                <h2>使用素材<span class="material-symbols-outlined">Horizontal_Rule</span>モンキーポッド</h2>
+
+                <figure><img src="images/monkeypod.jpeg" alt="">
+                    <figcaption>
+                        モンキーポッドは美しい木目と力強いコントラストが魅力の広葉樹。豊かな色合いと美しい木目が特長で、耐水性が高く、建築素材や様々な家具に幅広く活用されています。時間が経つにつれて深みのある味わいが出てくる素材です。
+                    </figcaption>
+                </figure>
+                <p class="learnmore"><a class="materialsymbols-before" href="">LEARN MORE</a></p>
+            </div>
 
         </section>
 
@@ -137,40 +201,82 @@
         <section class="pItem-spec">
             <h2>仕様</h2>
             <dl>
-                <dt>サイズ</dt>
-                <dd>この商品はサイズオーダーが可能です。<br>
-                    天板：幅140～180cm 奥行 70～90cm<br>
-                    脚：高さ60～75cm
-
-                    <p><a href="">セミオーダーサービスについて</a></p>
-                </dd>
-                <dt>材質</dt>
-                <dd>
-                    天板：モンキーポッド
-                    脚：リサイクルスチール
-                </dd>
-                <dt>原産国</dt>
-                <dd>日本</dd>
-                <dt>配送</dt>
-                <dd>
-                    通常7～10日後出荷<br>
-                    送料の目安：￥5,500<br>
-                    <span>
-                        ※当社指定エリアの場合。北海道・沖縄県・離島は別料金です。配送について詳しくは<a href="">ご利用ガイド</a>をご覧ください。
-                    </span>
-                </dd>
+                <div class="wrap01">
+                    <dt>サイズ</dt>
+                    <dd>この商品はサイズオーダーが可能です。<br>
+                        天板：幅140～180cm 奥行 70～90cm<br>
+                        脚：高さ60～75cm
+                        <a href=""><span class="material-symbols-outlined">measuring_tape</span>セミオーダーサービスについて</a>
+                    </dd>
+                </div>
+                <div class="wrap02">
+                    <dt>材質</dt>
+                    <dd>
+                        天板：モンキーポッド
+                        脚：リサイクルスチール
+                    </dd>
+                </div>
+                <div class="wrap03">
+                    <dt>原産国
+                    </dt>
+                    <dd>日本</dd>
+                </div>
+                <div class="wrap04">
+                    <dt>配送</dt>
+                    <dd>
+                        通常7～10日後出荷<br>
+                        送料の目安：￥5,500<br>
+                        <span>
+                            ※当社指定エリアの場合。北海道・沖縄県・離島は別料金です。配送について詳しくは<a href="">ご利用ガイド</a>をご覧ください。
+                        </span>
+                    </dd>
+                </div>
             </dl>
+            <div class="wrap05">
 
-            <p>天板のサイズを選ぶ</p>
-            <span>※写真の商品サイズ：幅175cm x 奥行 80cm</span>
-            <ul>
-                <li>幅（CM）</li>
-                <li>奥行（CM）</li>
-            </ul>
-            <p>脚の高さを選ぶ</p>
-            <ul>
-                <li>高さ（CM）</li>
-            </ul>
+                <p class="material-symbols-outlined">天板のサイズを選ぶ</p>
+                <span>※写真の商品サイズ：幅175cm x 奥行 80cm</span>
+                <ul>
+                    <li>幅（CM）</li>
+                    <li><!-- サイズオーダースライダー ■ 幅 -->
+                        <span class="slider-label">101</span>
+                        <div class="slider-wrap">
+                            <div class="display-box" id="display-width">160</div>
+                            <input type="range" id="slider-width" min="101" max="180" value="160">
+                        </div>
+                        <span class="slider-label">180</span>
+                    </li>
+                </ul>
+                <ul>
+                    <li>奥行（CM）</li>
+                    <li> <!-- サイズオーダースライダー ■ 奥行 -->
+                        <span class="slider-label">70</span>
+                        <div class="slider-wrap">
+                            <div class="display-box" id="display-depth">85</div>
+                            <input type="range" id="slider-depth" min="70" max="90" value="85">
+                        </div>
+                        <span class="slider-label">90</span>
+
+                    </li>
+                </ul>
+                <p class="material-symbols-outlined">脚の高さを選ぶ</p>
+                <ul>
+                    <li>高さ（CM）</li>
+                    <li>
+                        <!-- サイズオーダースライダー ■ 高さ -->
+                         <span class="slider-label">60</span>
+                        <div class="slider-wrap">
+                            <div class="display-box" id="display-height">70</div>
+                            <input type="range" id="slider-height" min="60" max="70" value="70">
+                        </div>
+                         <span class="slider-label">70</span>
+                    </li>
+                </ul>
+            </div>
+
+
+
+
         </section>
         <!-- Section04 購入エリア ------------------------>
         <section class="pItem-purchase">
@@ -185,7 +291,7 @@
             <p class="c-delivery_notes">上記の配送料はお届け先が当社の基本配送エリアの場合の金額です。配送料は注文画面でご確認いただけます。</p>
             <div class="pItem-button-wrap">
 
-                <button type="button" class="c-button-add_to_cart">
+                <button id="addToCart" type="button" class="c-button-add_to_cart">
                     カートに入れる
                 </button>
                 <button type="button" class="c-button-favorite"><span
@@ -424,15 +530,13 @@
                 <div class="l-footer-pc-wrap">
                     <dl>
                         <dt>ブランドについて</dt>
-                        <dl><a href="">私たちの想い</a></dl>
-                        <dl><a href="">素材について</a></dl>
-                        <dl><a href="">ジャーナル</a></dl>
+                        <dd><a href="">私たちの想い</a><a href="">素材について</a><a href="">ジャーナル</a></dd>
                     </dl>
 
                     <dl>
                         <dt>商品・サービス</dt>
-                        <dl><a href="">プロダクト一覧</a></dl>
-                        <dl><a href="">テーブル/デスク</a></dl>
+                        <dd><a href="">プロダクト一覧</a></dd>
+                        <dd><a href="">テーブル/デスク</a></dd>
                         <dl><a href="">チェア/スツール</a></dl>
                         <dl><a href="">チェスト/シェルフ</a></dl>
                         <dl><a href="">インテリア雑貨/その他</a></dl>
@@ -461,6 +565,46 @@
 
         </nav>
     </footer>
+
+
+    <!-- Javascript サイズオーダー スライダー-->
+    <script>
+        function setupSlider(sliderId, displayId) {
+            const slider = document.getElementById(sliderId);
+            const display = document.getElementById(displayId);
+
+            function updateDisplay() {
+                const min = slider.min;
+                const max = slider.max;
+                const val = slider.value;
+                const percent = (val - min) / (max - min);
+
+                const sliderWidth = slider.offsetWidth;
+                const thumbWidth = 16; // ← つまみの幅(px)
+
+                const pos = percent * (sliderWidth - thumbWidth) + thumbWidth / 2;
+
+                display.textContent = val;
+                display.style.left = pos + "px";
+            }
+
+
+            slider.addEventListener("input", updateDisplay);
+            updateDisplay();
+        }// 初期表示
+        // それぞれのスライダーを初期化
+        setupSlider("slider-width", "display-width");
+        setupSlider("slider-depth", "display-depth");
+        setupSlider("slider-height", "display-height");
+
+        // カートに入れるをクリックしたら値を送信（今回はconsole出力）
+        button.addEventListener("click", () => {
+            const selectedValue = slider.value;
+            console.log("カートに送信するサイズ:", selectedValue);
+            alert(`サイズ ${selectedValue} をカートに入れました！`);
+            // 実際のECではここでサーバーに送信する処理を書く
+        });
+    </script>
 
 </body>
 

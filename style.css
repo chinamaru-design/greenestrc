@@ -490,7 +490,7 @@ nav.l-footer-nav>p.sitelogo a {
     color: var(--color-white);
     font-size: 1rem;
     /*16px*/
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-style: normal;
     font-weight: 400;
 }
@@ -554,7 +554,7 @@ nav.l-footer-nav>p.sitelogo a {
     height: 58px;
     font-size: 1rem;
     /*16px*/
-    font-family: Roboto;
+    font-family: "Roboto";
     font-style: normal;
     font-weight: 400;
     line-height: 58px;
@@ -563,7 +563,7 @@ nav.l-footer-nav>p.sitelogo a {
 
 small {
     color: var(--color-white);
-    font-family: Roboto, sans-serif;
+    font-family: "Roboto", sans-serif;
     font-size: calc(13/16 * 1rem);
 }
 
@@ -665,9 +665,9 @@ page > main > main-section01
 .pIndex-conceptimg2 {
     aspect-ratio: 1 / 1;
     /* 正方形にする */
-    background-image: url("images/SecAboutDesign-sp.png");
+    background: url("images/SecAboutDesign-sp.png") no-repeat right;
     /* ← SP画像を指定 */
-    background-size: cover;
+    background-size: 80%;
     margin: 0;
 }
 
@@ -746,7 +746,7 @@ page > main > main-section01
 
 
 .pIndex-section03 {
-    padding: 0px 20px;
+    padding: 70px 20px 0;
     margin-bottom: 100px;
 }
 
@@ -894,6 +894,10 @@ page > main > main-section01
 .cat4 h3 {
     background: url(images/product04-h.png) center/contain no-repeat;
 }
+.pc-only {
+    display:none;
+}
+
 
 
 /*MATERIALS*/
@@ -1084,7 +1088,7 @@ page > main > main-section01
     aspect-ratio: 1 / 1;
     /* Shadow_Wood_Pine */
     font-family: "Ysabeau SC";
-    font-size: 20px;
+    font-size: 18px;
     font-style: normal;
     font-weight: 600;
     line-height: 100%;
@@ -1797,6 +1801,8 @@ ITEMページ　item.html
 .pItem-spec h2 {
     font-size: calc(20 / 16 *1rem);
     font-weight: 400;
+    display: flex;
+    align-items: center
 }
 
 
@@ -1809,19 +1815,28 @@ ITEMページ　item.html
     font-weight: 300;
     line-height: 1.8;
 }
+
 .pItem-product_description .wrap01 {
-padding:50px 20px 0;
-    border-top:1px solid #E8E8E8;
+    padding: 50px 20px 0;
+    border-top: 1px solid #E8E8E8;
 }
+
+.pItem-product_description .wrap01 span:before {
+    content: "measuring_tape";
+
+}
+
 .pItem-product_description .wrap02 {
     padding: 20px 0 50px;
     display: flex;
     flex-direction: column;
     gap: 18px
 }
+
 .pItem-product_description .wrap03 {
     padding: 50px 20px 50px;
-background-color: var(--color-cream);}
+    background-color: var(--color-cream);
+}
 
 .pItem-product_description figure img {
     padding: 15px 0 15px 0;
@@ -1840,9 +1855,9 @@ background-color: var(--color-cream);}
 
 .learnmore .materialsymbols-before {
     position: relative;
-    gap:0.2rem;    
+    gap: 0.2rem;
     color: #333;
-    justify-content:flex-end;
+    justify-content: flex-end;
     padding-right: 28px;
 }
 
@@ -1861,7 +1876,8 @@ background-color: var(--color-cream);}
     /* テキスト色と同じに */
     transform: translateY(-50%);
 }
-.learnmore .materialsymbols-before::before{
+
+.learnmore .materialsymbols-before::before {
     content: "";
     position: absolute;
     right: 0;
@@ -1876,17 +1892,170 @@ background-color: var(--color-cream);}
 
 
 
+
 /* <!-- Section03 仕様・サイズ決定 ------------------------> */
 .pItem-spec {
-    padding: 50px 20px;
+    padding: 50px 20px 0;
 }
 
+.pItem-spec dl {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding: 20px 0 80px;
+    border-bottom: 1px lightgray solid;
+}
+
+.pItem-spec dt {
+    font-size: 1rem;
+    font-weight: 350;
+    line-height: 1.8;
+}
+
+.pItem-spec dd {
+    font-size: 1rem;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+.pItem-spec .wrap01,
+.pItem-spec .wrap02,
+.pItem-spec .wrap03,
+.pItem-spec .wrap04 {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2em;
+}
+
+
+.pItem-spec .wrap01 a {
+    line-height: 1;
+    font-size: 1rem;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 4px 5px 6px 5px;
+    background-color: rgba(203, 166, 113, .25);
+    width: fit-content;
+    margin: 10px 0;
+    margin-left: auto;
+}
+.pItem-spec .wrap01 .material-symbols-outlined {
+font-variation-settings:
+        'wght' 300;
+}
+
+.pItem-spec .wrap04 span a {
+    text-decoration: underline;
+
+}
+
+.pItem-spec .wrap05 {
+    padding-top: 30px;
+    align-items: center;
+    justify-content: center;
+}
+
+.pItem-spec .wrap05 p {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+    gap: .3em;
+    /* ← アイコンと文字の間隔 */
+    line-height: 1.4;
+    /* ← テキストの行の高さ */
+}
+
+.pItem-spec .wrap05 p:first-child::before {
+    line-height: 1;
+    font-size: 21px;
+    content: "straighten";
+    display: inline-block;
+    /* ← ベースラインずれを防ぐ */
+    font-variation-settings:
+        'wght' 300,
+        'opsz' 21;
+}
+
+.pItem-spec .wrap05 p:last-of-type::before {
+    line-height: 1;
+    font-size: 21px;
+    content: "straighten";
+    transform: rotate(90deg);
+    display: inline-block;
+    /* ← ベースラインずれを防ぐ */
+    font-variation-settings:
+        'wght' 300,
+        'opsz' 21;
+}
+
+
+
+/*サイズオーダー　スライダー用*/
+
+.pItem-spec .wrap05 ul {
+    display: flex;
+    align-items: center;
+    /* 縦位置を揃える */
+    justify-content: space-between;
+    /* 両端に配置 */
+    gap: 1rem;
+    width: 100%;
+    /* 親いっぱい */
+    box-sizing: border-box;
+    margin: 55px 0;
+    position: relative;
+}
+
+/* 第一要素：ラベル領域 */
+.pItem-spec .wrap05 ul li:first-child {
+    white-space: nowrap;
+    /* 折り返されないように */
+    flex: 0 0 auto;
+    /* ラベルは内容幅のまま */
+    font-weight: 400;
+    font-size: calc(15 / 16 *1rem);
+    font-family: "Roboto", sans-serif;
+}
+
+
+/* 第二要素：スライダーを内包する領域 */
+.pItem-spec .wrap05 ul li:last-child {
+    flex: 1;
+    /* スライダー側が余ったスペースを全部取る。自動調整 */
+    display: flex;
+    /* 中の .slider-wrap を右端へ寄せる */
+    justify-content: flex-end;
+    align-items: center;
+    gap: 0.5rem;
+    /* 数字とスライダーの間隔 */
+
+}
+
+/*min to maxをスライダーの左右に表示*/
+.pItem-spec .wrap05 ul li:last-child span {
+    font-weight: 400;
+    font-size: calc(15 / 16 *1rem);
+    font-family: "Roboto", sans-serif;
+}
+
+.slider-wrap {
+    position: relative;
+    width: 100%;
+    /* スライダー全体の幅は、 親コンテナ(li)をflex:1 の幅いっぱいにする */
+    margin: 0;
+    /* 上下余白は ul / section 側で管理 */
+
+}
 
 
 /* <!-- Section04 購入エリア------------------------> */
 
 .pItem-purchase {
-    padding: 50px 20px 0;
+    padding: 10px 20px 0;
 }
 
 .pItem-purchase dl {
@@ -1972,7 +2141,6 @@ background-color: var(--color-cream);}
     display: flex;
     width: 100%;
     height: 60px;
-    padding: 0 116px 0 117px;
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
@@ -2042,7 +2210,6 @@ background-color: var(--color-cream);}
         display: block;
         /* デフォルトでは無効 */
     }
-
 
 
     /* ヘッダ */
@@ -2242,13 +2409,16 @@ background-color: var(--color-cream);}
         grid-template-columns: 1fr 1fr;
 
     }
-
+.pc-only {
+    display:block;
+}
     .pIndex-section04-imagelarge {
         flex: 1;
         aspect-ratio: 1 / 1;
         /* 好きな比率に */
         overflow: hidden;
     }
+    
 
     /* 画像のトリミング指定 */
     .pIndex-section04-imagelarge img {
